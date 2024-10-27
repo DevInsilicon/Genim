@@ -1,0 +1,7 @@
+name: Genim
+version: '1.0'
+main: dev.insilicon.genim.Genim
+api-version: '1.21'
+prefix: GM
+load: STARTUP
+authors: [ ModdedKid ]
