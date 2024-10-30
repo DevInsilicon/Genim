@@ -15,11 +15,28 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven {
+        name = 'papermc'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+    maven {
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+    maven { url = uri("https://maven.enginehub.org/repo/") }
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT")
+    compileOnly 'io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT'
+    compileOnly 'me.clip:placeholderapi:2.11.6'
+    compileOnly 'net.luckperms:api:5.4'
+    implementation(platform("com.intellectualsites.bom:bom-newest:1.50")) // Ref: https://github.com/IntellectualSites/bom
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Core")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit")
 }
+
 
 def targetJavaVersion = 21
 java {
@@ -46,4 +63,8 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
+}
+
+jar {
+    destinationDirectory = file('C:/Users/jwwww/programming/A_Latest_test_ver/plugins')
 }
